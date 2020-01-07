@@ -2,6 +2,10 @@ from flask import Flask, request, render_template, jsonify
 import pandas as pd
 from flask_sqlalchemy import SQLAlchemy
 import sqlite3
+import pickle
+from sklearn.neighbors import NearestNeighbors
+import numpy as np
+from model import process_input, df
 
 app = Flask(__name__)
 
@@ -40,14 +44,15 @@ def song(song_id):
     song_row = curs.execute(f"SELECT * FROM songs WHERE track_id = '{song_id}'").fetchall()
     print(song_row[0][1])
     #model
-    # model = "some model"
+    #with open('model.pkl', 'rb') as mod:
+    #    model = pickle.load(mod)
 
     #parameters to send to model (if necessary)
     # danceability = song_data['danceability']
     # energy = song_data['energy']
+    recommendations = process_input(song_id)
 
-    #output
-    # recommendations = model.predict(danceability, energy, etc)
+    print(recommendations)
 
     # The implimentation of the model might be a jsonify_function
     # the model output would then be jsonified in a format
@@ -55,16 +60,17 @@ def song(song_id):
     # jsonify_function(function(song_id))
 
     #The above is what you would return
-    return  str(song_row) #jsonify(reccomendations)
+    return  str(song_row)
+    #jsonify(reccomendations)
 
 @app.route('/favorites',methods = ['POST'])
 def favorites():
     my_dict = request.get_json(force=True)
     track_list = []
     for i in favorites.values():
-        query = f"SELECT * FROM songs WHERE track_id = '{i}'"
-        song_row = curs.execute(query).fetchall()
-        song_rows.append(song_row[0])
+        track_list.append(process_input(song_id))
+    out_list = sample(track_list,30)
+    print(out_list)
 
 
 
