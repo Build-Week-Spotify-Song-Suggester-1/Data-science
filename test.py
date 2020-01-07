@@ -67,7 +67,7 @@ def song(song_id):
 def favorites():
     my_dict = request.get_json(force=True)
     track_list = []
-    for i in favorites.values():
+    for i in my_dict.values():
         track_list.append(process_input(song_id))
     out_list = sample(track_list,30)
     print(out_list)
