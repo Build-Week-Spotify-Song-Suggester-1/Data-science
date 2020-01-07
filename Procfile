@@ -1,1 +1,1 @@
-web: gunicorn FLASK:APP -t 120
+web gunicorn test:app
