@@ -11,7 +11,7 @@ def process_input(song_id):
     df_selected = df.copy()
     if not pd.isnull(song["genre"]): # If genre, set subset to only genre
         df_selected = df[df["genre"] == song["genre"]]
-    nn = NearestNeighbors(n_neighbors=30, algorithm="kd_tree") # Nearest Neighbor Model
+    nn = NearestNeighbors(n_neighbors=31, algorithm="kd_tree") # Nearest Neighbor Model
     nn.fit(df_selected.drop(columns=c))
     song = song.drop(index=c)
     song = np.array(song).reshape(1, -1)
