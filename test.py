@@ -34,23 +34,7 @@ def home():
 def song(song_id):
     """Route for recommendations based on song selected."""
 
-    #song_id = request.json['key']
-    song_id=str(song_id)
-
-    recommendations = process_input(song_id)
-
-    print(type(recomendations))
-    print(type(recomendations[0]))
-    print(recomendations)
-
-    # The implimentation of the model might be a jsonify_function
-    # the model output would then be jsonified in a format
-    # that front end would need.
-    # jsonify_function(function(song_id))
-
-    #The above is what you would return
-    return  recomendations
-    #jsonify(reccomendations)
+    return process_input(song_id)
 
 @app.route('/favorites',methods = ['POST'])
 def favorites():
