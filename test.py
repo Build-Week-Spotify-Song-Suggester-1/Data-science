@@ -36,23 +36,12 @@ def song(song_id):
 
     #song_id = request.json['key']
     song_id=str(song_id)
-    print(song_id)
 
-    # connecting to local database to retreive values
-    conn = sqlite3.connect('songs_df.sqlite3')
-    curs = conn.cursor()
-    song_row = curs.execute(f"SELECT * FROM songs WHERE track_id = '{song_id}'").fetchall()
-    print(song_row[0][1])
-    #model
-    #with open('model.pkl', 'rb') as mod:
-    #    model = pickle.load(mod)
-
-    #parameters to send to model (if necessary)
-    # danceability = song_data['danceability']
-    # energy = song_data['energy']
     recommendations = process_input(song_id)
 
-    print(recommendations)
+    print(type(recomendations))
+    print(type(recomendations[0]))
+    print(recomendations)
 
     # The implimentation of the model might be a jsonify_function
     # the model output would then be jsonified in a format
@@ -60,7 +49,7 @@ def song(song_id):
     # jsonify_function(function(song_id))
 
     #The above is what you would return
-    return  str(song_row)
+    return  recomendations
     #jsonify(reccomendations)
 
 @app.route('/favorites',methods = ['POST'])
@@ -68,7 +57,7 @@ def favorites():
     my_dict = request.get_json(force=True)
     track_list = []
     for i in my_dict.values():
-        track_list.append(process_input(song_id))
+        track_list.append(process_input(i))
     out_list = sample(track_list,30)
     print(out_list)
 
