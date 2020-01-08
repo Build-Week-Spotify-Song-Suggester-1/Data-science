@@ -5,7 +5,7 @@ import pandas as pd
 
 df = pd.read_csv("https://raw.githubusercontent.com/Build-Week-Spotify-Song-Suggester-1/Data-science/master/MusicWithGenresFiltered.csv")
 
-def process_input(song_id):
+def process_input(song_id, return_json=True):
     c = ["duration_ms", "index", "genre", "artist_name", "track_id", "track_name", "key", "mode"] # Columns to Omit
     song = df[df["track_id"] == song_id].iloc[0] # Get Song
     df_selected = df.copy()
@@ -15,4 +15,7 @@ def process_input(song_id):
     nn.fit(df_selected.drop(columns=c))
     song = song.drop(index=c)
     song = np.array(song).reshape(1, -1)
-    return df_selected.iloc[nn.kneighbors(song)[1][0][1:]].to_json(orient="records") # Return results
+    if return_json is False:
+        return df_selected.iloc[nn.kneighbors(song)[1][0][1:]] # Return results as df
+    else:
+        return df_selected.iloc[nn.kneighbors(song)[1][0][1:]].to_json(orient="records") # Return results as json
