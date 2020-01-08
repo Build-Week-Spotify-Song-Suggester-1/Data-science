@@ -36,7 +36,7 @@ def song(song_id):
 
     return process_input(song_id)
 
-@app.route('/favorites',methods = ['POST'])
+@app.route('/favorites',methods = ['GET', 'POST'])
 def favorites():
     my_dict = request.get_json(force=True)
     track_list = []
