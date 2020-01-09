@@ -109,6 +109,8 @@ The app handles the requests, returning the appropriate JSON data.
 
 Find the last version of the Flask API on:
 
+[Home](https://spotifyflask.herokuapp.com)
+
 [Suggestions example based on one song](https://spotifyflask.herokuapp.com/song/6VjBxj5OhlHqL4h5qwo6gL)
 
 [Suggestions example based on a list of favorites](https://spotifyflask.herokuapp.com/favorites)
