@@ -1,5 +1,4 @@
 from flask import Flask, request, render_template, jsonify
-from flask_sqlalchemy import SQLAlchemy
 from sklearn.neighbors import NearestNeighbors
 import pandas as pd
 import numpy as np
@@ -65,5 +64,6 @@ def radar_map(song_id):
     pic_bytes = io.BytesIO()
     plt.savefig(pic_bytes, format="png")
     pic_bytes.seek(0)
-    image_encoded = b"data:image/png;base64," + base64.b64encode(pic_bytes.read())
-    return image_encoded
+    data = base64.b64encode(pic_bytes.read()).decode("ascii")
+    plt.clf()
+    return "<img src='data:image/png;base64,{}'>".format(data)
