@@ -30,6 +30,7 @@ Endpoint to return a list of 30 full detailed suggestions based on one track_id 
 **Returns:** JSON array containing the full details of the top 30 suggestions for a track_id given.
 
 Example:
+
 ` https://spotifyflask.herokuapp.com/song/6VjBxj5OhlHqL4h5qwo6gL`
 
 Returns:
@@ -79,6 +80,7 @@ Endpoint to return a radar chart image based on one track_id given.
 **Returns:** Renders a radar chart image based on one track_id given.
 
 Example:
+
 `https://spotifyflask.herokuapp.com/image/6VjBxj5OhlHqL4h5qwo6gL`
 
 Returns:
