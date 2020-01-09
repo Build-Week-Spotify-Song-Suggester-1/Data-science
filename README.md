@@ -1,17 +1,16 @@
 # Data-science
 
-## Spotify Song Suggester API
-
-A simple back-end Flask API to suggest spotify songs in the Spotify Song Suggester app
-based on a track_id chosen by the user or a list of favorite songs.
-
 - [Spotify Song Suggester API](#spotify-song-suggester-api)
   - [Usage](#usage)
     - [Suggestion of 30 songs based on one track_id given](#suggested-songs-based-on-a-song)
     - [Suggestion of 30 songs based on a list of favorited song track_ids](#suggested-songs-based-on-a-list-of-favorites)
-    - [Testing](#testing app)
+    - [Testing](#testing-app)
   - [Deployment](#deployment)
 
+## Spotify Song Suggester API
+
+A simple back-end Flask API to suggest spotify songs in the Spotify Song Suggester app
+based on a track_id chosen by the user or a list of favorite songs
 ---
 
 ## Usage
