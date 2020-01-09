@@ -18,7 +18,7 @@ based on a track_id chosen by the user or a list of favorite songs
 
 ### Suggestion of 30 songs based on one track_id given
 
-Endpoint to return a list of 30 suggestions based on one track_id given.
+Endpoint to return a list of 30 full detailed suggestions based on one track_id given.
 
     /song/<song_id>
 
@@ -39,7 +39,7 @@ Returns:
 
 ### Suggestion of 30 songs based on a list of favorited song track_ids
 
-Endpoint to return a list of 30 suggestions based on a list of favorited song track_ids.
+Endpoint to return a list of 30 full detailed suggestions based on a list of favorited song track_ids.
 
     /favorites
 
