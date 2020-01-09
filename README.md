@@ -11,6 +11,7 @@
 
 A simple back-end Flask API to suggest spotify songs in the Spotify Song Suggester app
 based on a track_id chosen by the user or a list of favorite songs
+
 ---
 
 ## Usage
