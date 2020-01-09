@@ -4,6 +4,7 @@
   - [Usage](#usage)
     - [Suggestion of 30 songs based on one track_id given](#suggested-songs-based-on-a-song)
     - [Suggestion of 30 songs based on a list of favorited song track_ids](#suggested-songs-based-on-a-list-of-favorites)
+    - [Radar chart image based on one track_id given](#radar-chart-image-based-on-one-given-image)
     - [Testing](#testing-app)
   - [Deployment](#deployment)
 
@@ -20,7 +21,7 @@ based on a track_id chosen by the user or a list of favorite songs
 
 Endpoint to return a list of 30 full detailed suggestions based on one track_id given.
 
-    /song/<song_id>
+[GET]    /song/<song_id>
 
 **Parameters:** None
 
@@ -33,7 +34,11 @@ Example:
 
 Returns:
 
-    `[{"index":37134,"artist_name":"Moby","track_id":"3UigcTkkcvBLnq6GVCjE3i","track_name":"Like a Motherless Child - Broken Places Remix","acousticness":0.00176,"danceability":0.573,"duration_ms":349747,"energy":0.858,"instrumentalness":0.301,"key":2,"liveness":0.208,"loudness":-6.335,"mode":1,"speechiness":0.0497,"tempo":101.984,"time_signature":4,"valence":0.241,"popularity":27,"genre":"electronic"}...`
+    `[{"index":37134,"artist_name":"Moby","track_id":"3UigcTkkcvBLnq6GVCjE3i",
+    "track_name":"Like a Motherless Child - Broken Places Remix","acousticness":0.00176,
+    "danceability":0.573,"duration_ms":349747,"energy":0.858,"instrumentalness":0.301,
+    "key":2,"liveness":0.208,"loudness":-6.335,"mode":1,"speechiness":0.0497,
+    "tempo":101.984,"time_signature":4,"valence":0.241,"popularity":27,"genre":"electronic"}...`
 
 ---
 
@@ -41,21 +46,50 @@ Returns:
 
 Endpoint to return a list of 30 full detailed suggestions based on a list of favorited song track_ids.
 
-    /favorites
+[[GET] OR [POST]    /favorites
 
 **Parameters:**
 
-- request: list of track_id's
+- request: JSON object with track_id's
 
-**Returns:** JSON array containing the full details of the top 30 suggestions for a track_id given.
+**Returns:** JSON array containing the full details of the top 30 suggestions based on a list of favorited song track_ids.
 
 Example:
 
-
+`https://spotifyflask.herokuapp.com/favorites`
 
 Returns:
 
+`[{"index":85630,"artist_name":"Beautiful Eulogy","track_id":"5Uv8yxTZhMWYhufL4jcWyV",
+"track_name":"Doxology - Instrumental","acousticness":0.609,"danceability":0.447,
+"duration_ms":231297,"energy":0.396,"instrumentalness":0.897,"key":6,"liveness":0.145,
+"loudness":-9.031,"mode":0,"speechiness":0.0367,"tempo":192.041,"time_signature":4,
+"valence":0.0346,"popularity":21,"genre":"hip-hop"}`
 
+### Radar chart image based on one track_id given
+
+Endpoint to return a radar chart image based on one track_id given.
+
+[Get]    /image/<song_id>
+
+**Parameters:** None
+
+- request:track_id
+
+**Returns:** Renders a radar chart image based on one track_id given.
+
+Example:
+`https://spotifyflask.herokuapp.com/image/6VjBxj5OhlHqL4h5qwo6gL`
+
+Returns:
+
+    `<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAH
+    gCAYAAAA10dzkAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAPYQAAD
+    2EBqD+naQAAADh0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9u
+    My4xLjIsIGh0dHA6Ly9tYXRwbG90bGliLm9yZy8li6FKAAAgAElEQVR
+    4nOzdd1SUV/4G8GdmGIcyoKAGwYJKEcUOAoJGUowNsG3EbiyJRtPjJ
+    tnklxizm03ZTdFolsTE2BNj1BUsaFBRULEQsaCUiFhRERmkw5TfHwi
+    rhihl4M4783zO8WwOyMwjyxmeud/...`
 
 ### Testing
 
@@ -75,6 +109,8 @@ Find the last version of the Flask API on:
 
 [Suggestions example based on one song](https://spotifyflask.herokuapp.com/song/6VjBxj5OhlHqL4h5qwo6gL)
 
-[Suggestions example based on a list of favorites]()
+[Suggestions example based on a list of favorites](https://spotifyflask.herokuapp.com/favorites)
+
+[Radar chart image example based on one song](https://spotifyflask.herokuapp.com/image/6VjBxj5OhlHqL4h5qwo6gL)
 
 ---
