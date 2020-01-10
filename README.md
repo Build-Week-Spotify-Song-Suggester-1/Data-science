@@ -13,6 +13,11 @@
 A simple back-end Flask API to suggest spotify songs in the Spotify Song Suggester app
 based on a track_id chosen by the user or a list of favorite songs
 
+The spotify song suggester API uses the Spotify Audio Features dataset, uploaded to Kaggle joined with webscraped genre.
+
+A KNN model was integrated into the Flask app. 
+The app handles the requests, returning the appropriate JSON data.
+
 ---
 
 ## Usage
@@ -112,11 +117,6 @@ Returns:
 Flask API was tested in Postman.
 
 ---
-
-The spotify song suggester API uses the Spotify Audio Features dataset, uploaded to Kaggle joined with webscraped genre.
-
-A KNN model was pickled to be integrated into the Flask app. 
-The app handles the requests, returning the appropriate JSON data.
 
 ## Deployment
 
