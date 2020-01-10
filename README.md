@@ -2,10 +2,10 @@
 
 - [Spotify Song Suggester API](#spotify-song-suggester-api)
   - [Usage](#usage)
-    - [Suggestion of 30 songs based on one track_id given](#suggested-songs-based-on-a-song)
-    - [Suggestion of 30 songs based on a list of favorited song track_ids](#suggested-songs-based-on-a-list-of-favorites)
-    - [Radar chart image based on one track_id given](#radar-chart-image-based-on-one-given-image)
-    - [Testing](#testing-app)
+    - [Suggestion of 30 songs based on one track_id given](#[get]-/song/<track_id>)
+    - [Suggestion of 30 songs based on a list of favorited song track_ids](#[get]-or-[post]-/favorites)
+    - [Radar chart image based on one track_id given](#[get]-/image/<track_id>)
+    - [Testing](#testing)
   - [Deployment](#deployment)
 
 ## Spotify Song Suggester API
@@ -22,7 +22,7 @@ The app handles the requests, returning the appropriate JSON data.
 
 ## Usage
 
-### [GET]    /song/<song_id>
+### [GET] /song/<track_id>
 
 #### Retrieve 30 songs suggested based on one track_id given
 
@@ -45,7 +45,7 @@ Returns:
     "tempo":101.984,"time_signature":4,"valence":0.241,"popularity":27,"genre":"electronic"}...`
 
 ---
-### [GET] OR [POST]    /favorites
+### [GET] OR [POST] /favorites
 
 #### Retrieve 30 songs suggested based on a list of favorited song track_ids
 
@@ -58,7 +58,7 @@ Returns:
 	"3":" song_id_3"
 }`
 
-Here is an example with actual song ids.
+Here is an example with actual track ids.
 
 `{
 	"1":"2RM4jf1Xa9zPgMGRDiht8O",
@@ -86,7 +86,7 @@ Returns:
 
 ---
 
-### [GET]    /image/<track_id>
+### [GET] /image/<track_id>
 
 #### Radar chart image based on one track_id given
 
