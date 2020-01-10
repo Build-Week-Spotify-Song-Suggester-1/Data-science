@@ -66,7 +66,7 @@ Here is an example with actual song ids.
 	"3":"6Wosx2euFPMT14UXiWudMy"
 }`
 
-**Parameters:**
+**Parameters:** None
 
 - request: JSON object with track_id's
 
