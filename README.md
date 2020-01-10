@@ -49,6 +49,23 @@ Endpoint to return a list of 30 full detailed suggestions based on a list of fav
 
 [[GET] OR [POST]    /favorites
 
+	To retrieve data from this endpoint the body of the request should contain 
+	Json in the format of :
+  
+`{
+	"1":"song_id_1"
+	"2":" song_id_2",
+	"3":" song_id_3"
+}`
+
+Here is an example with actual song ids.
+
+`{
+	"1":"2RM4jf1Xa9zPgMGRDiht8O",
+	"2":"1tHDG53xJNGsItRA3vfVgs",
+	"3":"6Wosx2euFPMT14UXiWudMy"
+}`
+
 **Parameters:**
 
 - request: JSON object with track_id's
