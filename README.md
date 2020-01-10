@@ -78,11 +78,11 @@ Example:
 
 Returns:
 
-`[{"index":85630,"artist_name":"Beautiful Eulogy","track_id":"5Uv8yxTZhMWYhufL4jcWyV",
-"track_name":"Doxology - Instrumental","acousticness":0.609,"danceability":0.447,
-"duration_ms":231297,"energy":0.396,"instrumentalness":0.897,"key":6,"liveness":0.145,
-"loudness":-9.031,"mode":0,"speechiness":0.0367,"tempo":192.041,"time_signature":4,
-"valence":0.0346,"popularity":21,"genre":"hip-hop"}`
+	`[{"index":85630,"artist_name":"Beautiful Eulogy","track_id":"5Uv8yxTZhMWYhufL4jcWyV",
+	"track_name":"Doxology - Instrumental","acousticness":0.609,"danceability":0.447,
+	"duration_ms":231297,"energy":0.396,"instrumentalness":0.897,"key":6,"liveness":0.145,
+	"loudness":-9.031,"mode":0,"speechiness":0.0367,"tempo":192.041,"time_signature":4,
+	"valence":0.0346,"popularity":21,"genre":"hip-hop"}`
 
 ### Radar chart image based on one track_id given
 
