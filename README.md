@@ -5,7 +5,7 @@
     - [Suggestion of 30 songs based on one track_id given](#[get]-/song/<track_id>)
     - [Suggestion of 30 songs based on a list of favorited song track_ids](#[get]-or-[post]-/favorites)
     - [Radar chart image based on one track_id given](#[get]-/image/<track_id>)
-    - [Testing](#testing)
+  - [Testing](#testing)
   - [Deployment](#deployment)
 
 ## Spotify Song Suggester API
