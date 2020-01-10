@@ -2,9 +2,9 @@
 
 - [Spotify Song Suggester API](#spotify-song-suggester-api)
   - [Usage](#usage)
-    - [Suggestion of 30 songs based on one track_id given](#[get]-/song/<track_id>)
-    - [Suggestion of 30 songs based on a list of favorited song track_ids](#[get]-or-[post]-/favorites)
-    - [Radar chart image based on one track_id given](#[get]-/image/<track_id>)
+    - [Suggestion of 30 songs based on one track_id given](#get-song-track_id)
+    - [Suggestion of 30 songs based on a list of favorited song track_ids](#get-or-post-favorites)
+    - [Radar chart image based on one track_id given](#get-image-track_id)
   - [Testing](#testing)
   - [Deployment](#deployment)
 
@@ -21,6 +21,8 @@ The app handles the requests, returning the appropriate JSON data.
 ---
 
 ## Usage
+
+### Track ID 
 
 ### [GET] /song/<track_id>
 
