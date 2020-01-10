@@ -17,11 +17,9 @@ based on a track_id chosen by the user or a list of favorite songs
 
 ## Usage
 
-### Retrieve 30 songs suggested based on one track_id given
+### [GET]    /song/<song_id>
 
-Endpoint to return a list of 30 full detailed suggestions based on one track_id given.
-
-[GET]    /song/<song_id>
+#### Retrieve 30 songs suggested based on one track_id given
 
 **Parameters:** None
 
@@ -42,12 +40,9 @@ Returns:
     "tempo":101.984,"time_signature":4,"valence":0.241,"popularity":27,"genre":"electronic"}...`
 
 ---
+### [GET] OR [POST]    /favorites
 
-### Retrieve 30 songs suggested based on a list of favorited song track_ids
-
-Endpoint to return a list of 30 full detailed suggestions based on a list of favorited song track_ids.
-
-[[GET] OR [POST]    /favorites
+#### Retrieve 30 songs suggested based on a list of favorited song track_ids
 
 	To retrieve data from this endpoint the body of the request should contain 
 	Json in the format of :
@@ -84,11 +79,11 @@ Returns:
 	"loudness":-9.031,"mode":0,"speechiness":0.0367,"tempo":192.041,"time_signature":4,
 	"valence":0.0346,"popularity":21,"genre":"hip-hop"}`
 
-### Radar chart image based on one track_id given
+---
 
-Endpoint to return a radar chart image based on one track_id given.
+### [GET]    /image/<track_id>
 
-[Get]    /image/<song_id>
+#### Radar chart image based on one track_id given
 
 **Parameters:** None
 
@@ -110,12 +105,13 @@ Returns:
     tnklxizm03ZTdFolsTE2BNj1BUsaFBRULEQsaCUiFhRERmkw5TfHwi
     rhihl4M4783zO8WwOyMwjyxmeud/...`
 
+---
+
 ### Testing
 
 Flask API was tested in Postman.
 
 ---
-
 
 The spotify song suggester API uses the Spotify Audio Features dataset, uploaded to Kaggle joined with webscraped genre.
 
